@@ -9,10 +9,15 @@ import { environment } from 'environment';
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { FormsModule } from '@angular/forms';
+import { SearchMoviesComponent } from './components/search-movies/search-movies.component';
+import { TopNavComponent } from './components/top-nav/top-nav.component';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    SearchMoviesComponent,
+    TopNavComponent
   ],
   imports: [
     BrowserModule,
@@ -21,7 +26,10 @@ import { FormsModule } from '@angular/forms';
     MaterialModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule,
+    // HttpClient,
+    // HttpModule
   ],
   providers: [],
   bootstrap: [AppComponent]

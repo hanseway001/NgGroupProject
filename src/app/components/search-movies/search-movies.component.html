@@ -1,0 +1,29 @@
+<p>search-movies works!</p>
+<mat-card>
+    <mat-card-title>Search</mat-card-title>
+    <mat-card-content>
+      <form [formGroup]="form" (ngSubmit)="search()">
+  
+        <section>
+          <mat-form-field>
+            <input matInput type="text" placeholder="Movie Name" formControlName="searchTerm">
+          </mat-form-field>
+        </section>
+  
+      </form>
+    </mat-card-content>
+  </mat-card>
+
+ <!-- <span *ngIf="imageArray">
+    <a *ngFor="let image of imageArray">
+      <button>
+        <img  [src]=image alt="" (click)="selectImage(image)">
+
+      </button>
+    </a>
+</span> -->
+
+<div *ngIf="apiResponse">
+    <h3>API Response:</h3>
+    <p >{{apiResponse | json}}</p>
+</div>
