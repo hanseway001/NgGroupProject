@@ -1,0 +1,31 @@
+<h1>Final Capstone</h1>    
+    <div>
+        <main className="loginMain">
+          <h1 className='center'>Login</h1>
+          <form className="loginModel center column" onSubmit={handleSubmit}>
+            <div className="">
+              <label className="black" htmlFor="username">Username:</label>
+              <input className="LoginInputBox"
+                type="text"
+                id="LoginUsername"
+                name="username"
+                value={username}
+                onInput={handleInputChange}
+                required
+              />
+            </div>
+            <div>
+              <label className="black" htmlFor="password">Password:</label>
+              <input className="LoginInputBox"
+                type="password"
+                id="loginPassword"
+                name="password"
+                value={password}
+                onInput={handleInputChange}
+                required
+              />
+            </div>
+            <button className="LoginSubmitButton" type="submit" mat-raised-button color="primary">Submit</button>
+          </form>
+        </main>
+      </div>

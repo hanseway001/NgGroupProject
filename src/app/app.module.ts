@@ -9,10 +9,14 @@ import { environment } from 'environment';
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { FormsModule } from '@angular/forms';
+import { ComponentsComponent } from './components/components.component';
+import { FirstPageComponent } from './first-page/first-page.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ComponentsComponent,
+    FirstPageComponent
   ],
   imports: [
     BrowserModule,
