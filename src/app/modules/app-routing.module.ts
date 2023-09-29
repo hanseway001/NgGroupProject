@@ -3,7 +3,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { SearchMoviesComponent } from '../components/search-movies/search-movies.component';
 
 const routes: Routes = [
-  {path: '', component: SearchMoviesComponent},
+  // {path: '', component: },
+  {path: 'search', component: SearchMoviesComponent},
   // {path: '', redirectTo: 'search', pathMatch:'full'},
   // {path: 'search', component: SearchMoviesComponent},
   // {path: 'error', component: ErrorComponent},

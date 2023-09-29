@@ -31,7 +31,7 @@ export class SearchMoviesComponent {
     }
 
   ngOnInit(){
-    this.search();
+    this.topRated();
 
   }
 
@@ -62,6 +62,12 @@ export class SearchMoviesComponent {
       } );
   }
 
+  topRated() {
+    this.gitDatInfo.topRated().subscribe(
+      (res: any) => {
+        this.apiResponse = JSON.stringify(res);
 
+      } );
+  }
 
 }
