@@ -2,28 +2,35 @@
 <mat-card>
     <mat-card-title>Search</mat-card-title>
     <mat-card-content>
-      <form [formGroup]="form" (ngSubmit)="search()">
-  
-        <section>
-          <mat-form-field>
-            <input matInput type="text" placeholder="Movie Name" formControlName="searchTerm">
-          </mat-form-field>
-        </section>
-  
-      </form>
+        <form [formGroup]="form" (ngSubmit)="search()">
+            <section>
+                <mat-form-field>
+                    <input matInput type="text" placeholder="Movie Name" formControlName="searchTerm">
+                </mat-form-field>
+            </section>
+        </form>
     </mat-card-content>
-  </mat-card>
-
- <!-- <span *ngIf="imageArray">
-    <a *ngFor="let image of imageArray">
-      <button>
-        <img  [src]=image alt="" (click)="selectImage(image)">
-
-      </button>
-    </a>
-</span> -->
-
-<div *ngIf="apiResponse">
-    <h3>API Response:</h3>
-    <p >{{apiResponse | json}}</p>
+</mat-card>
+<div >
+    <div class="content" *ngIf="moviesArray">
+        <mat-card class="movie-card" *ngFor="let movie of moviesArray">
+            <!-- <label for="">thing</label>  -->
+            <!-- <img  [src]=image alt="" (click)="selectImage(image)"> -->
+            <img src="https://www.themoviedb.org/t/p/w200/{{movie.poster}}" alt="">
+            <mat-card-title>
+                {{movie.title}}
+            </mat-card-title>
+            
+            <mat-card-content>
+                <!-- {{movie.id}} -->
+                <!-- {{movie.poster}} -->
+                <p>{{movie.overview}}</p>
+            </mat-card-content>
+        </mat-card>
+    </div>
+    
+    <div *ngIf="apiResponse">
+        <h3>API Response:</h3>
+        <p>{{apiResponse | json}}</p>
+    </div>
 </div>

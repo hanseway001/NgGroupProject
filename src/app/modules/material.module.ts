@@ -28,7 +28,6 @@ import {MatSidenavModule} from '@angular/material/sidenav';
     ReactiveFormsModule,
     MatTabsModule,
     MatSidenavModule,
-    
   ],  
   exports: [
     MatToolbarModule,
