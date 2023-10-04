@@ -1,27 +1,43 @@
 <!-- <p>movie-details works!</p> -->
 
 <div class="content" *ngIf="movieArray">
-    <div *ngFor="let movie of movieArray">
+    <!-- <div *ngFor="let movie of movieArray"> -->
+        <div class="title">
+            <h1>Movie Details</h1>
+            <mat-icon (click)="home()" aria-hidden="false" aria-label="Example home icon" fontIcon="home"></mat-icon>
+        </div>
 
-        <mat-card class="movie-card" style="background-image: url('https://www.themoviedb.org/t/p/w450/{{movie.backdrop_path}}');">
+
+
+        <mat-card *ngFor="let movie of movieArray" class="movie-card" style="background-image: url('https://www.themoviedb.org/t/p/original{{movie.backdrop_path}}');">
             <!-- <label for="">thing</label>  -->
             <!-- <img  [src]=image alt="" (click)="selectImage(image)"> -->
             <img src="https://www.themoviedb.org/t/p/w200/{{movie.poster}}" alt="">
-            <mat-card-title>
-                {{movie.title}}
-            </mat-card-title>
+        <!-- </mat-card> -->
+        <!-- <mat-card> -->
+            <div class="details">
 
-            <mat-card-content>
-                <!-- {{movie.id}} -->
-                <!-- {{movie.poster}} -->
-                <p>{{movie.overview}}</p>
-                <p>${{movie.budget}}</p>
-                <p>{{movie.popularity}}</p>
-            </mat-card-content>
+                <mat-card-title>
+                    <h1>
+                         {{movie.title}} - {{movie.release_date}}
+                    </h1>
+                </mat-card-title>
+                <div> {{movie.runtime}} Minutes</div>
+                    
+                <mat-card-content>
+                    <div>
+                        <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="home"></mat-icon>
+                    </div>
+                    <h2>Overview</h2>
+                    <p>{{movie.overview}}</p>
+                    <p>Movie Budget - ${{movie.budget}}</p>
+                    <p>{{movie.popularity}}</p>
+                </mat-card-content>
+                </div>   
         </mat-card>
-    </div>
-<!-- 
-    <div *ngIf="apiResponse">
+ 
+
+    <!-- <div *ngIf="apiResponse">
         <h3>API Response:</h3>
         <p>{{apiResponse | json}}</p>
     </div> -->

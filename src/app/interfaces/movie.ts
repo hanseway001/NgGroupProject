@@ -6,5 +6,6 @@ export interface Movie {
     budget?: number;
     popularity?: number;
     backdrop_path?: string;
-    
+    release_date?: string;
+    runtime?: string
 }

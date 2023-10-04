@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Movie } from 'src/app/interfaces/movie';
 import { GetMoviesService } from 'src/app/services/get-movies.service';
 
@@ -17,7 +17,7 @@ export class MovieDetailsComponent {
   constructor (
     private gitDatInfo: GetMoviesService,
     private route: ActivatedRoute, // <-- injects ActivatedRoute service
-
+    private router: Router,
     // private cacheDatInfo: CacheDatInfoService, 
 
     )
@@ -46,7 +46,9 @@ console.log('movieId in details component', movieId)
                 poster: res.poster_path,
                 budget: res.budget,
                 popularity: res.popularity,
-                backdrop_path: res.backdrop_path
+                backdrop_path: res.backdrop_path,
+                release_date: res.release_date.split('-',1)[0],
+                runtime: res.runtime
               };
               this.movieArray.push(movie);
               console.log('movie Array', this.movieArray)
@@ -55,4 +57,7 @@ console.log('movieId in details component', movieId)
       } );
   }
 
+  home() {
+    this.router.navigate(['/search'])
+  }
 }
