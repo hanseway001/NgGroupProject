@@ -3,4 +3,8 @@ export interface Movie {
     title: string;
     overview: string;
     poster: string;
+    budget?: number;
+    popularity?: number;
+    backdrop_path?: string;
+    
 }

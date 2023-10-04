@@ -29,8 +29,9 @@ export class GetMoviesService {
     return this.http.get<any>(this.searchEP+ '?api_key=' + this.apiKey + '&query=' + name + '&include_adult=false&language=en-US&page=1')
   }
 
-  getMovie(id: string ): Observable<any> {
-    return this.http.get<any>('https://api.themoviedb.org/3/movie/' + id + '?api_key=')
+  getMovie(id: string | null ): Observable<any> {
+    console.log("get movie id", id)
+    return this.http.get<any>('https://api.themoviedb.org/3/movie/' + id + '?api_key=' + this.apiKey)
   }
 
   topRated():Observable<any>{

@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { GetMoviesService } from 'src/app/services/get-movies.service';
 import { Movie } from 'src/app/interfaces/movie';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-search-movies',
@@ -17,7 +18,7 @@ export class SearchMoviesComponent {
   apiResponse: string = '';
   moviesArray: Movie[] = [];
   // movie: Movie = new Movie;
-  movieObj: object = {}
+  // movieObj: object = {}
 
 
   constructor (
@@ -25,6 +26,7 @@ export class SearchMoviesComponent {
     // private cacheDatInfo: CacheDatInfoService, 
     formBuilder: FormBuilder,
     private route: ActivatedRoute,
+    private router: Router,
     )
     {
       this.form = formBuilder.group({
@@ -43,7 +45,7 @@ export class SearchMoviesComponent {
     this.moviesArray = [];
     this.gitDatInfo.searchMovies(name).subscribe(
       (res: any) => {
-
+        console.log('results',res)
         if (Array.isArray(res.results)) {
           res.results.forEach((movieData: { id: any; title: any; overview: any; poster_path: any}) => {
             if (movieData.id && movieData.title) {
@@ -75,10 +77,17 @@ export class SearchMoviesComponent {
                 poster: movieData.poster_path,
               };
               this.moviesArray.push(movie);
+              // console.log('movie Array', this.moviesArray)
+
             }
           });
         }
       } );
+  }
+
+  goToMovieDetails(movieId: string) {
+    console.log('the movei id get movie detail', movieId)
+    this.router.navigate(['/movie-details', movieId])
   }
 
 }
