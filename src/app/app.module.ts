@@ -8,8 +8,6 @@ import { AppRoutingModule } from './modules/app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './modules/material.module';
-
-
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { AngularFireStorageModule } from '@angular/fire/compat/storage';
@@ -19,12 +17,8 @@ import { environment } from "../../environment";
 
 import { FormsModule } from '@angular/forms';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
-// import { MovieDetailsComponent } from './components/movie-details/movie-details.component';
 import { LoginPageComponent } from '../app/login-page/login-page.component';
 
-
-// service
-// import { AuthService } from './shared/services/auth.service';
 
 @NgModule({
   declarations: [
@@ -49,8 +43,6 @@ import { LoginPageComponent } from '../app/login-page/login-page.component';
     AngularFirestoreModule,
     AngularFireStorageModule,
     AngularFireDatabaseModule,
-    // HttpClient,
-    // HttpModule
   ],
   providers: [LoginPageComponent],
   bootstrap: [AppComponent]
