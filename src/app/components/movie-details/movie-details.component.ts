@@ -11,53 +11,46 @@ import { GetMoviesService } from 'src/app/services/get-movies.service';
 })
 export class MovieDetailsComponent {
   movieArray: Movie[] = [];
-  // form: any;
   apiResponse: string = '';
 
-  constructor (
+  constructor(
     private gitDatInfo: GetMoviesService,
     private route: ActivatedRoute, // <-- injects ActivatedRoute service
-    private router: Router,
-    // private cacheDatInfo: CacheDatInfoService, 
+    private router: Router, 
+  ) {}
 
-    )
-    {
+  ngOnInit() {
+    this.search();
+  }
 
-    }
-
-    ngOnInit(){
-      this.search();
-  
-    }
-
-  search(){
+  search() {
     // let name = this.form.controls['searchTerm'].value;
     const movieId: string | null = this.route.snapshot.paramMap.get('movieId');
-console.log('movieId in details component', movieId)
+    console.log('movieId in details component', movieId)
     this.movieArray = [];
     this.gitDatInfo.getMovie(movieId).subscribe(
       (res: any) => {
         // this.apiResponse = JSON.stringify(res);
         if (res) {
-              const movie: Movie = {
-                id: res.id,
-                title: res.title,
-                overview: res.overview,
-                poster: res.poster_path,
-                budget: res.budget,
-                popularity: res.popularity,
-                backdrop_path: res.backdrop_path,
-                release_date: res.release_date.split('-',1)[0],
-                runtime: res.runtime
-              };
-              this.movieArray.push(movie);
-              console.log('movie Array', this.movieArray)
+          const movie: Movie = {
+            id: res.id,
+            title: res.title,
+            overview: res.overview,
+            poster: res.poster_path,
+            budget: res.budget,
+            popularity: res.popularity,
+            backdrop_path: res.backdrop_path,
+            release_date: res.release_date.split('-', 1)[0],
+            runtime: res.runtime
+          };
+          this.movieArray.push(movie);
+          console.log('movie Array', this.movieArray)
         }
- 
-      } );
+
+      });
   }
 
-  home() {
+  goToHome() {
     this.router.navigate(['/search'])
   }
 }
