@@ -21,7 +21,7 @@ import { FormsModule } from '@angular/forms';
 import { ComponentsComponent } from './components/components.component';
 import { FirstPageComponent } from './first-page/first-page.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
-import { MovieDetailsComponent } from './components/movie-details/movie-details.component';
+// import { MovieDetailsComponent } from './components/movie-details/movie-details.component';
 import { LoginPageComponent } from '../app/login-page/login-page.component';
 
 
