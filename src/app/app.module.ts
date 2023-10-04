@@ -8,34 +8,53 @@ import { AppRoutingModule } from './modules/app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './modules/material.module';
-import { environment } from 'environment';
+
+
 import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+import { AngularFireStorageModule } from '@angular/fire/compat/storage';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
+import { environment } from "../../environment";
+
 import { FormsModule } from '@angular/forms';
 import { ComponentsComponent } from './components/components.component';
 import { FirstPageComponent } from './first-page/first-page.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { MovieDetailsComponent } from './components/movie-details/movie-details.component';
+import { LoginPageComponent } from '../app/login-page/login-page.component';
+
+
+// service
+// import { AuthService } from './shared/services/auth.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     SearchMoviesComponent,
     TopNavComponent,
-    MovieDetailsComponent
+    MovieDetailsComponent,
+    LoginPageComponent,
+  ],
+  exports: [
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,
-    AngularFireModule.initializeApp(environment.firebase),
-    AngularFirestoreModule,
     FormsModule,
     HttpClientModule,
+
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireAuthModule,
+    AngularFirestoreModule,
+    AngularFireStorageModule,
+    AngularFireDatabaseModule,
     // HttpClient,
     // HttpModule
   ],
-  providers: [],
+  providers: [LoginPageComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
