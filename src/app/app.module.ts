@@ -18,6 +18,7 @@ import { environment } from "../../environment";
 import { FormsModule } from '@angular/forms';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { LoginPageComponent } from '../app/login-page/login-page.component';
+import { MyMoviesComponent } from './components/my-movies/my-movies.component';
 
 
 @NgModule({
@@ -27,6 +28,7 @@ import { LoginPageComponent } from '../app/login-page/login-page.component';
     TopNavComponent,
     MovieDetailsComponent,
     LoginPageComponent,
+    MyMoviesComponent,
   ],
   exports: [
   ],

@@ -1,0 +1,27 @@
+<!-- <p>my-movies works!</p> -->
+
+<h1>My watched movies</h1>
+<div class="content" *ngIf="moviesArray">
+    <div *ngFor="let movie of moviesArray">
+
+        <mat-card class="movie-card" (click)="goToMovieDetails(movie.id)">
+            <!-- <label for="">thing</label>  -->
+            <!-- <img  [src]=image alt="" (click)="selectImage(image)"> -->
+            <img src="https://www.themoviedb.org/t/p/w200/{{movie.poster}}" alt="">
+            <mat-card-title>
+                {{movie.title}}
+            </mat-card-title>
+
+            <mat-card-content>
+                <!-- {{movie.id}} -->
+                <!-- {{movie.poster}} -->
+                <!-- <p>{{movie.overview}}</p> -->
+            </mat-card-content>
+        </mat-card>
+    </div>
+<!-- 
+    <div *ngIf="apiResponse">
+        <h3>API Response:</h3>
+        <p>{{apiResponse | json}}</p>
+    </div> -->
+</div>

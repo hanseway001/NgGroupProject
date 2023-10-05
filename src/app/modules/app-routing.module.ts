@@ -7,6 +7,7 @@ import { LoginPageComponent } from '../login-page/login-page.component';
 import { SignInComponent } from '../components/sign-in/sign-in.component';
 import { SignUpComponent } from '../components/sign-up/sign-up.component';
 import { VerifyEmailComponent } from '../components/verify-email/verify-email.component';
+import { MyMoviesComponent } from '../components/my-movies/my-movies.component';
 
 
 const routes: Routes = [
@@ -21,7 +22,7 @@ const routes: Routes = [
   // {path: 'movie-details/**', component: MovieDetailsComponent},
   {path: 'movie-details/:movieId', component: MovieDetailsComponent},
   // {path: '', redirectTo: 'search', pathMatch:'full'},
-  // {path: 'search', component: SearchMoviesComponent},
+  {path: 'my-movies', component: MyMoviesComponent},
   // {path: 'error', component: ErrorComponent},
   {path: '**', redirectTo: '', pathMatch: 'full'}
 ];
