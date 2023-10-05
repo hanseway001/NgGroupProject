@@ -1,7 +1,7 @@
 <div class="displayTable">
     <div class="displayTableCell">
       <div class="authBlock">
-        <h3>Sign Up</h3>
+        <h2>Sign Up</h2>
         <div class="formGroup">
           <input
             type="email"
@@ -23,7 +23,7 @@
         <div class="formGroup">
           <input
             type="button"
-            class="btn btnPrimary"
+            class="btn btnPrimary submitButton"
             value="Sign Up"
             (click)="authService.SignUp(userEmail.value, userPwd.value)"
           />
@@ -37,7 +37,7 @@
         <input
         type="button"
         class="btn btnPrimary"
-        value="Log In"
+        value="Sign In"
         (click)="goToLogIn()"
         >
         <!-- <a routerLink="/sign-in" class="nav-link" href="http://localhost:4200"> Log In</a> -->

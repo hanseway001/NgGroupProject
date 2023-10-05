@@ -40,6 +40,8 @@ import {MatSidenavModule} from '@angular/material/sidenav';
     ReactiveFormsModule,
     MatTabsModule,
     MatSidenavModule
-  ]
+  ],  
+  //  schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
+
 })
 export class MaterialModule { }

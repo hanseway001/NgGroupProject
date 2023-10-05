@@ -1,0 +1,17 @@
+.displayTableCell {
+    display: flex;
+    width: 100vw;
+    align-items: center;
+    flex-direction: column;
+}
+
+.formControl{
+    width: 150%;
+    height: 30px;
+}
+
+.submitButton {
+    width: 155%;
+    height: 30px;
+    margin-top: 10px;
+}
