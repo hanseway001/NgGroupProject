@@ -2,10 +2,10 @@
 
 <div class="content" *ngIf="movieArray">
     <!-- <div *ngFor="let movie of movieArray"> -->
-        <div class="title">
+        <mat-card class="title">
             <h1>Movie Details</h1>
             <mat-icon (click)="goToHome()" aria-hidden="false" aria-label="Example home icon" fontIcon="home"></mat-icon>
-        </div>
+        </mat-card>
 
 
 
@@ -22,11 +22,15 @@
                          {{movie.title}} - {{movie.release_date}}
                     </h1>
                 </mat-card-title>
-                <div> {{movie.runtime}} Minutes</div>
+                <p> {{movie.runtime}} Minutes</p>
                     
                 <mat-card-content>
                     <div>
-                        <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="list"></mat-icon>
+                        <mat-icon matTooltip="Rate" aria-hidden="false" aria-label="Rate icon" fontIcon="star_half"></mat-icon>
+                        <mat-icon matTooltip="Comment" aria-hidden="false" aria-label="Comment icon" fontIcon="add_comment"></mat-icon>
+                        <mat-icon matTooltip="Add to watched list" aria-hidden="false" aria-label="Watched icon" fontIcon="post_add"></mat-icon>
+                        <mat-icon matTooltip="Add to watch later list" aria-hidden="false" aria-label="My Library icon" fontIcon="bookmark"></mat-icon>
+
                     </div>
                     <h2>Overview</h2>
                     <p>{{movie.overview}}</p>

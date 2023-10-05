@@ -11,6 +11,7 @@ import {MatCardModule} from '@angular/material/card';
 import {MatListModule} from '@angular/material/list';
 import { MatTabsModule } from '@angular/material/tabs';
 import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatTooltipModule} from '@angular/material/tooltip';
 
 
 
@@ -28,6 +29,7 @@ import {MatSidenavModule} from '@angular/material/sidenav';
     ReactiveFormsModule,
     MatTabsModule,
     MatSidenavModule,
+    MatTooltipModule
   ],  
   exports: [
     MatToolbarModule,
@@ -39,9 +41,8 @@ import {MatSidenavModule} from '@angular/material/sidenav';
     MatFormFieldModule,
     ReactiveFormsModule,
     MatTabsModule,
-    MatSidenavModule
-  ],  
-  //  schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
-
+    MatSidenavModule,
+    MatTooltipModule
+  ]
 })
 export class MaterialModule { }
